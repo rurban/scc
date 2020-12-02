@@ -74,10 +74,10 @@ Type qualifiers make the type system ugly, and their uselessness adds
 unnecessary complexity to the compiler (and increased compilation time):
 
 	- const: The definition of const is not clear in the standard.
-	  If a const value is modified the behavior is undefined
+	  If a const value is modified, the behavior is undefined
 	  behaviour. It seems it was defined in order to be able to
 	  allocate variables in ROM rather than error detection. This
-	  implememtation will not warn about these modifications and
+	  implementation will not warn about these modifications and
 	  the compiler will treat them like normal variables (the standard
 	  specifies that a diagnostic message must be printed).
 
@@ -103,7 +103,9 @@ unnecessary complexity to the compiler (and increased compilation time):
 	  performance (and in fact even with this specifier FORTRAN has a
 	  better performance in this field). Ignoring it doesn't make the
 	  compiler non-standard and in almost all applications the performance
-	  will be the same.
+	  will be the same. On most compilers restrict is also broken, and
+	  should be defined away in some cases.
+	  (e.g. https://github.com/rurban/autoconf-archive/commits/restrict)
 
 - Function type names
   -------------------

@@ -4,3 +4,6 @@ bin/
 lib/
 libexec/
 dirs
+src/libc/arch/amd64/linux/_getrusage.s
+src/libc/arch/amd64/linux/_gettimeofday.s
+src/libc/time/tz.c
